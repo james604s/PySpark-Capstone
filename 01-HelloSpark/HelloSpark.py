@@ -1,9 +1,12 @@
-import sys
+import os, sys
 from pyspark.sql import *
 from lib.logger import Log4j
 from lib.utils import *
 
 if __name__ == "__main__":
+
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    print(os.getcwd())
     conf = get_spark_app_config()
 
     spark = SparkSession \
